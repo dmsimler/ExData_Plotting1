@@ -7,8 +7,8 @@
 ##         have also just been a straight R script.
 ##         Takes as an input, the data file and plot file names
 ## ################################################################################################
-plot2 <- function(data_file_name, plot_file_name) {
-  
+plot2 <- function(data_file_name = "household_power_consumption.txt", plot_file_name = "plot2.png") 
+{
 ## First read in the data from the file
 power_consumption_ds <- read.table(data_file_name, header=TRUE, sep=";", colClasses = c("character", "character", rep("numeric", 1, 7)), na.strings="?")
 

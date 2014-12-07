@@ -1,14 +1,17 @@
 ## ################################################################################################
 ## Function Plot4 - Creates the 4th plot for Course Assignment 1.  
-##                  The plot is a line graph of the data/time (on the x-axis)
-##                  vs. the three Sub_metering_xxx fields (on the y-axis) that is saved to a png file. 
+##                  The plot is a set of 4 graphs:
+##                  1) A histogram of data/time vs. global active power
+##                  2) A line graph of Date/Time vs. Voltage
+##                  3) A line graph of Date/Time vs. the 3 sub_metering_xxx fields
+##                  4) A line graph of Date/Time vs. Global_reactive_power
 ##
 ## Notes - Made this a function for maintainability and understandibility, but the assignment could
 ##         have also just been a straight R script.
 ##         Takes as an input, the data file and plot file names
 ## ################################################################################################
-plot4 <- function(data_file_name, plot_file_name) {
-  
+plot4 <- function(data_file_name = "household_power_consumption.txt", plot_file_name = "plot4.png") 
+{
   ## First read in the data from the file
   power_consumption_ds <- read.table(data_file_name, header=TRUE, sep=";", colClasses = c("character", "character", rep("numeric", 1, 7)), na.strings="?")
   
