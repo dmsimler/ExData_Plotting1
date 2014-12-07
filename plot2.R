@@ -10,10 +10,8 @@ power_consumption_ds$Date_time <- strptime(paste(power_consumption_ds$Date, powe
 ## Open up the png device to which the plot will be written
 png(filename = "plot2.png", width = 480, height = 480, units = "px")
 
-## Now create a histogram of the Global_active_power data with the correct title, x-axis label, and color
-## for the bars.  Settling on orangered2 as the bar color since it most closely matches
-## on my screen what is shown in the assignment's reference graph.
-with(power_consumption_ds, plot(Date_time, Global_active_power, type="l", xlab = "", ylab="Global Active Power (kilowatts)"))
+## Now create a line plot with Date/Time on the x-axis and Global Active Power on the y-axis
+with(power_consumption_ds, plot(x = Date_time, y = Global_active_power, type="l", xlab = "", ylab="Global Active Power (kilowatts)"))
 
 ## Now close the png device
 dev.off()
